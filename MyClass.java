@@ -12,8 +12,20 @@ public class MyClass {
   }
 
   public static void main(String[] args) {
-    String name = "Jirppa";
-    System.out.println("Hello " + name);
-    loop();
+
+    class Person {
+      private String name;
+
+      public String getName() {
+        return name;
+      }
+
+      public void setName(String newName) {
+        this.name = newName;
+      }
+    }
+    Person person = new Person();
+    person.setName("Jirppa");
+    System.out.print(person.getName());
   }
 }
