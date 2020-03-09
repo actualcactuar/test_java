@@ -14,7 +14,7 @@ public class UselessCLI {
             if (userLog.createNewFile()) {
                 System.out.println("File created: " + userLog.getName());
             } else {
-                System.out.println("File already exists.");
+                System.out.println("Reading from file log.txt");
             }
 
             Scanner logReader = new Scanner(userLog);
