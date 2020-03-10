@@ -39,10 +39,12 @@ public class UselessCLI {
         return text;
     }
 
-    private void writeLogFile(String existingText, String name) {
+    private void writeLogFile(ArrayList<String> list, String name) {
         try {
             FileWriter myWriter = new FileWriter("log.txt");
-            String allText = existingText + name + " ran this java code";
+            String nextInput = name + " ran this java code";
+            list.add(nextInput);
+            String allText = this.joinArrayList(list);
             myWriter.write(allText);
             myWriter.close();
             System.out.println(name + " added to user log");
@@ -59,8 +61,7 @@ public class UselessCLI {
         String name = scanner.next();
         System.out.print("Received name: " + name + "\n");
         ArrayList<String> list = cli.getLinesAsArray();
-        String existingLog = cli.joinArrayList(list);
-        cli.writeLogFile(existingLog, name);
+        cli.writeLogFile(list, name);
 
         System.out.print("Who do you want to find?\n");
         String search = scanner.next();
